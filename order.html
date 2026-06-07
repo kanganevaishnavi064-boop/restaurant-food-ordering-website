@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order - Taste of Nashik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1>Taste of Nashik</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="order.html">Order</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact">
+    <h2>Place Your Order</h2>
+
+    <form onsubmit="return placeOrder()">
+        <input type="text" id="name" placeholder="Enter Your Name" required>
+
+        <input type="tel" id="phone" placeholder="Enter Mobile Number" required>
+
+        <select id="food" required>
+            <option value="">Select Item</option>
+            <option>Paneer Tikka - ₹180</option>
+            <option>Veg Biryani - ₹220</option>
+            <option>Cold Coffee - ₹120</option>
+        </select>
+
+        <input type="number" id="quantity" placeholder="Quantity" min="1" required>
+
+        <button type="submit">Place Order</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Taste of Nashik Restaurant</p>
+</footer>
+
+<script>
+function placeOrder() {
+    let name = document.getElementById("name").value;
+    let food = document.getElementById("food").value;
+    let quantity = document.getElementById("quantity").value;
+
+    alert(
+        "Order Placed Successfully!\n\n" +
+        "Customer: " + name +
+        "\nItem: " + food +
+        "\nQuantity: " + quantity
+    );
+
+    return false;
+}
+</script>
+
+</body>
+</html>
