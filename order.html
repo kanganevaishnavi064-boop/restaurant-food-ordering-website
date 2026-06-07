@@ -21,24 +21,37 @@
 </header>
 
 <section class="contact">
-    <h2>Place Your Order</h2>
+
+    <h2>Order Summary</h2>
+
+    <div id="emptyCartMessage">
+        <p>No items added yet. Please select items from the menu.</p>
+    </div>
+
+    <ul id="orderItems"></ul>
+
+    <h3>Total Amount: ₹<span id="orderTotal">0</span></h3>
 
     <form onsubmit="return placeOrder()">
-        <input type="text" id="name" placeholder="Enter Your Name" required>
 
-        <input type="tel" id="phone" placeholder="Enter Mobile Number" required>
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter Your Name"
+            required
+        >
 
-        <select id="food" required>
-            <option value="">Select Item</option>
-            <option>Paneer Tikka - ₹180</option>
-            <option>Veg Biryani - ₹220</option>
-            <option>Cold Coffee - ₹120</option>
-        </select>
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Enter Mobile Number"
+            required
+        >
 
-        <input type="number" id="quantity" placeholder="Quantity" min="1" required>
+        <button type="submit">Confirm Order</button>
 
-        <button type="submit">Place Order</button>
     </form>
+
 </section>
 
 <footer>
@@ -46,21 +59,64 @@
 </footer>
 
 <script>
+
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const total = localStorage.getItem("total") || 0;
+
+const orderItems = document.getElementById("orderItems");
+const emptyCartMessage = document.getElementById("emptyCartMessage");
+
+if (cart.length > 0) {
+
+    emptyCartMessage.style.display = "none";
+
+    cart.forEach(item => {
+
+        const li = document.createElement("li");
+
+        li.textContent = item.name + " - ₹" + item.price;
+
+        orderItems.appendChild(li);
+
+    });
+
+}
+
+document.getElementById("orderTotal").textContent = total;
+
 function placeOrder() {
-    let name = document.getElementById("name").value;
-    let food = document.getElementById("food").value;
-    let quantity = document.getElementById("quantity").value;
+
+    if (cart.length === 0) {
+        alert("Please add items from the menu first.");
+        return false;
+    }
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+
+    if (phone.length < 10) {
+        alert("Please enter a valid mobile number.");
+        return false;
+    }
 
     alert(
         "Order Placed Successfully!\n\n" +
         "Customer: " + name +
-        "\nItem: " + food +
-        "\nQuantity: " + quantity
+        "\nPhone: " + phone +
+        "\nTotal Amount: ₹" + total
     );
+
+    localStorage.removeItem("cart");
+    localStorage.removeItem("total");
+
+    window.location.href = "index.html";
 
     return false;
 }
+
 </script>
 
 </body>
 </html>
+       
+  
