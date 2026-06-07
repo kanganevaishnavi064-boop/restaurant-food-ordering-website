@@ -1,0 +1,59 @@
+```html id="u8x5gk"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Taste of Nashik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1>Taste of Nashik</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact">
+    <h2>Contact & Table Booking</h2>
+
+    <div class="contact-info">
+        <p><strong>Address:</strong> Nashik, Maharashtra</p>
+        <p><strong>Phone:</strong> +91 9876543210</p>
+        <p><strong>Email:</strong> info@tasteofnashik.com</p>
+    </div>
+
+    <form id="bookingForm" onsubmit="return validateForm()">
+
+        <input type="text" id="name" placeholder="Enter Your Name" required>
+
+        <input type="email" id="email" placeholder="Enter Your Email" required>
+
+        <input type="tel" id="phone" placeholder="Enter Mobile Number" required>
+
+        <input type="date" id="date" required>
+
+        <input type="time" id="time" required>
+
+        <input type="number" id="guests" placeholder="Number of Guests" required>
+
+        <button type="submit">Book Table</button>
+
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Taste of Nashik Restaurant</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
