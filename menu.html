@@ -20,45 +20,53 @@
     </nav>
 </header>
 
-<section class="menu">
-    <h2>Our Menu</h2>
-
+<section class="contact">
+    <h2>your order</h2>
+    <ul id="cardlist"></ul>
+    <h3>Total:<span id="total">0</span></h3>
+    <a href="order.html" class="btn">Proceed to Order</a>
     <div class="cards">
 
         <div class="card">
             <h3>Paneer Tikka</h3>
             <p>Delicious grilled paneer with spices.</p>
             <p>₹180</p>
+            <button onclick="addTocart("Paneer Tikka",180)">Add To Order</button>
         </div>
 
         <div class="card">
             <h3>Veg Biryani</h3>
             <p>Traditional aromatic biryani.</p>
             <p>₹220</p>
+            <button onclick="addTocart("Veg Biryani",220)">Add To Order</button>
         </div>
 
         <div class="card">
             <h3>Margherita Pizza</h3>
             <p>Fresh cheese and tomato pizza.</p>
             <p>₹250</p>
+            <button onclick="addTocart("Margherita Pizza",250)">Add To Order</button>
         </div>
 
         <div class="card">
             <h3>Veg Burger</h3>
             <p>Crispy burger with fresh vegetables.</p>
             <p>₹150</p>
+           <button onclick="addTocart("Veg Burger",150)">Add To Order</button>
         </div>
 
         <div class="card">
             <h3>Cold Coffee</h3>
             <p>Refreshing chilled coffee.</p>
             <p>₹120</p>
+            <button onclick="addTocart("Cold Coffee",120)">Add To Order</button>
         </div>
 
         <div class="card">
             <h3>Chocolate Brownie</h3>
             <p>Rich chocolate dessert.</p>
             <p>₹140</p>
+            <button onclick="addTocart("Chocolate Brownie",140)">Add To Order</button>
         </div>
 
     </div>
